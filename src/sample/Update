@@ -1,0 +1,35 @@
+
+package recipe;
+
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+import javax.swing.border.TitledBorder;
+
+public class Update extends JPanel{
+    private JButton b;
+    private JTextField f;
+    private JSpinner s;
+    
+    public Update(){
+        b=new JButton("Update");
+        f=new JTextField(16);
+        s=new JSpinner();
+        this.setBorder(new TitledBorder("Input Options: "));
+        this.add(s);this.add(f);this.add(b);}
+    
+    public void addListener(ActionListener al){
+        b.addActionListener(al);}
+    
+    public static void main(String[] test){
+        Update u=new Update();
+        JFrame f=new JFrame("update");
+        f.add(u);
+        f.setLocation(400, 400);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.pack();
+        f.setVisible(true);}
+}
